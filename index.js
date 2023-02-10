@@ -11,11 +11,12 @@ const authToken = '5a01b9256cb009d4c222b0893786159f';
 const client = new twilio(accountSid, authToken);
 
 
-app.get("",(req,res)=>{
+app.get("/",(req,res)=>{
     console.log("hewllo")
     res.send("hello")
 
 })
+
 
 app.post('/incoing', (req, res) => {
   const message = req.body.Body;
@@ -23,6 +24,12 @@ app.post('/incoing', (req, res) => {
   
   res.send(`<Response><Message>Thanks for your message: ${message}</Message></Response>`);
 });
+app.get("hel",(req,res)=>{
+    const message = req.body.Body;
+    console.log(`Received message: ${message}`);
+    
+
+})
 const PORT = process.env.PORT||3000
 app.listen(PORT, () => {
   console.log('WhatsApp bot listening on port 3000!');
